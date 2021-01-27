@@ -6,3 +6,5 @@ puts b.length
 # string de múltiples líneas 
 c = "esto es\nstring\nmultiples lineas"
 puts c
+age = 32
+puts "mi edad es #{age}" 
