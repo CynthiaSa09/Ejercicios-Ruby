@@ -1,17 +1,23 @@
-puts 'precio de venta'
-precio_venta = ARGV[0].to_f
-puts 'número de usuarios'
-número_de_usuarios = ARGV[1].to_i
-puts 'usuarios premium' 
-usuarios_premium = ARGV[2].to_i
-puts 'usuarios gratuitos'
-usuarios_gratuitos = ARGV[3].to_i
-puts 'los gastos'
-gastos = ARGV[4].to_i
-utilidades = (precio_venta*(usuarios_premium*(precio_venta*2)))-gastos
-puts "El resultado de las utilidades es: #{utilidades}"
+price             = ARGV[0].to_i
+num_users         = ARGV[1].to_i
+num_premium_users = ARGV[2].to_i
+num_free_users    = ARGV[3].to_i
+cots              = ARGV[4].to_i
 
-if utilidades > 0 
-    puts 'El impuesto aplicado a la utilidad es:'
-    puts utilidades - (utilidades * 0.35)
+puts "el precio de venta es:#{price}"
+puts "la cantidad de usuarios es:#{num_users}"
+puts "la cantidad de usuarios premium es:#{num_premium_users}"
+puts "la cantidad de usuarios gratuitos es: #{num_free_users}"
+puts "la cantidad de gastos es: #{cots}"
+
+
+pre_tax_result = (price*( num_premium_users*(price*2))) - cots
+puts "El total de las utilidades antes de impuesto es #{pre_tax_result}"
+puts "El total de las utilidades despúes de impuesto es #{pre_tax_result}"
+if pre_tax_result.positive?
+   after_tax_result = (pre_tax_result*0.65).ceil  
+else
+puts pre_tax_result
 end
+
+
