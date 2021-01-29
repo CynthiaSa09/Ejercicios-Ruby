@@ -9,7 +9,8 @@ i   = 0
 sum = 0
 
 while (i < number)
-    i += 2
+    i += 1
+    if 
     sum += i
 end
 puts sum
