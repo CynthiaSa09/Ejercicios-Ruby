@@ -10,7 +10,8 @@ sum = 0
 
 while (i < number)
     i += 1
-    if 
-    sum += i
+    if i.even?
+     sum += i
+    end
 end
 puts sum
